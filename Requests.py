@@ -6,7 +6,7 @@ from dotenv import dotenv_values
 config = dotenv_values(".env")
 
 # OpenAI API Key
-api_key = config("OPENAI_API_KEY")
+api_key = config["OPENAI_API_KEY"]
 
 # Function to encode the image
 def encode_image(image_path):
@@ -32,7 +32,7 @@ payload = {
       "content": [
         {
           "type": "text",
-          "text": "Return a JSON object with the number of apples in the image. For example, if the image has 6 apples, the JSON object should be {\"apples\": 12, \"oranges\":24, \"bananas\": 5}."
+          "text": "Return a JSON object with the number of apples in the image. For example, if the image has 12 apples, 24 oranges and 5 bananas, the JSON object should be {\"apples\": 12, \"oranges\":24, \"bananas\": 5}. It is very important you return NOTHING except for the JSON object as the output will be used in code."
         },
         {
           "type": "image_url",
