@@ -32,7 +32,7 @@ payload = {
       "content": [
         {
           "type": "text",
-          "text": "Return a JSON object with the number of apples in the image. For example, if the image has 12 apples, 24 oranges and 5 bananas, the JSON object should be {\"apples\": 12, \"oranges\":24, \"bananas\": 5}. It is very important you return NOTHING except for the JSON object as the output will be used in code."
+          "text": "Return a dictionary based on the content in the image which contains: {\"type of food\": \"number of items\"}"
         },
         {
           "type": "image_url",
@@ -48,4 +48,4 @@ payload = {
 
 response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
 
-print(response.json())
+print(response.json()["choices"][0]["message"]["content"])
