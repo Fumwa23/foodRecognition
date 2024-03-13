@@ -19,9 +19,6 @@ def encode_image(image_path):
 def read_image(prompt, image_path):
     # Function to encode the image
 
-    # Path to your image
-    image_path = "images/6_apples.jpg"
-
     # Getting the base64 string
     base64_image = encode_image(image_path)
 
@@ -38,7 +35,7 @@ def read_image(prompt, image_path):
         "content": [
             {
             "type": "text",
-            "text": "Return a dictionary based on the content in the image which contains: {\"type of food\": \"number of items\"}"
+            "text": prompt
             },
             {
             "type": "image_url",
