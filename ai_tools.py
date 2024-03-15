@@ -1,4 +1,6 @@
-# %%
+'''
+This file contains the reusable tools for the AI models
+'''
 from openai import OpenAI
 import base64
 import requests
@@ -13,6 +15,10 @@ config = dotenv_values(".env")
 api_key = config["OPENAI_API_KEY"]
 
 def encode_image(image_path):
+    '''
+    This function takes an image path and returns a 
+    base64 string for the image at that path
+    '''
     with open(image_path, "rb") as image_file:
         return base64.b64encode(image_file.read()).decode('utf-8')
 
