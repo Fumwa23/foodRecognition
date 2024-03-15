@@ -1,4 +1,4 @@
-import ai_tools
+import utils.ai_tools as ai_tools
 from datetime import datetime
 
 def main():
@@ -16,6 +16,8 @@ def new_item(image_path ):
     
     #get the current time in the format: hour:minute
     time = now.strftime("%H:%M")
+    print(f"Date: {date} Time: {time}")
+    print(type(time))
     
     item = input("Enter source of food: ")
     # using the prompt
